@@ -59,6 +59,7 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/initializers/arkivo_constraint.rb',
   'config/initializers/curation_concerns.rb',
   'config/initializers/sufia-secret.rb',
+  'config/initializers/sufia6.rb',
   'config/newrelic.yml',
   'config/redis.yml',
   'config/scholarsphere.yml',
