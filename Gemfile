@@ -6,7 +6,8 @@ gem 'mysql2', '~> 0.3.17' unless ENV['CI']
 
 # Hydra gems
 gem 'active-fedora', '~> 10.3.0.rc2'
-gem 'sufia', github: 'projecthydra/sufia', branch: '7.2-migration'
+#gem 'sufia', github: 'projecthydra/sufia', branch: '7.2-migration'
+gem 'sufia', github: 'psu-stewardship/sufia', ref: 'ef298a'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
 
 # Other components

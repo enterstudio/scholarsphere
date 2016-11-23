@@ -1,7 +1,7 @@
 GIT
-  remote: git://github.com/projecthydra/sufia.git
-  revision: 7bab08e96d006659b4dc68ed3dfd1cb12540272d
-  branch: 7.2-migration
+  remote: git://github.com/psu-stewardship/sufia.git
+  revision: ef298ae83f1d1f7d9c944f09c886edbbc518ef1b
+  ref: ef298a
   specs:
     sufia (7.2.0)
       almond-rails (~> 0.0.1)
