@@ -18,13 +18,17 @@ module Import
       end
       sorted_versions = generic_file_versions.sort_by { |ver| ver[:created] }
       sorted_versions.each_with_index do |gf_version, index|
-        filename_on_disk = create(file_set, gf_version)
+        begin
+          filename_on_disk = create(file_set, gf_version)
 
-        if index == (sorted_versions.count - 1)
-          # characterize the current version
-          characterize(file_set, filename_on_disk)
-        else
-          File.delete(filename_on_disk)
+          if index == (sorted_versions.count - 1)
+            # characterize the current version
+            characterize(file_set, filename_on_disk)
+          else
+            File.delete(filename_on_disk)
+          end
+        rescue StandardError => error
+          raise if index == (sorted_versions.count - 1)
         end
       end
       # give the actual file its original file_name as opposed to the one we
