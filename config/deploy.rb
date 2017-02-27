@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 # config valid only for Capistrano 3.4
-lock '3.4.0'
+# lock '3.4.0'
 
 # application and repo settings
 set :application, 'scholarsphere'
@@ -35,7 +35,6 @@ set :rails_env, 'production'
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 set :whenever_roles, [:app, :job]
 
-set :scm, :git
 set :log_level, :debug
 set :pty, true
 
@@ -159,3 +158,4 @@ namespace :rbenv_custom_ruby_cleanup do
   end
   after "deploy:finishing", "rbenv_custom_ruby_cleanup:purge_old_versions"
 end
+

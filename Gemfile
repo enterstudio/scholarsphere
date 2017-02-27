@@ -14,6 +14,7 @@ gem 'sufia', github: 'projecthydra/sufia', ref: 'f61c5d64e'
 gem 'blacklight', '5.18.0'
 gem 'redis', '3.2.0'
 gem 'active-fedora', '9.7.3'
+gem 'rake', '11.3.0'
 
 # sprockets-rails 3 is complaining about images not being precompiled. 
 gem 'sprockets-rails', '< 3.0.0'
@@ -52,15 +53,17 @@ group :development, :test do
 end
 
 group :development do
-  gem 'airbrussh', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capistrano', '~> 3.0', require: false
-  gem 'capistrano-bundler', '~> 1.1', require: false
-  gem 'capistrano-rails', '~> 1.1', require: false
-  gem 'capistrano-rbenv', '~> 2.0', require: false
+
+# Use Capistrano for deployment
+  gem 'capistrano', '~> 3.7', require: false
+  gem 'capistrano-bundler', '~> 1.2',require: false
+  gem 'capistrano-rails', '~> 1.2', require: false
+  gem 'capistrano-rbenv', '~> 2.1', require: false
   gem 'capistrano-rbenv-install'
   gem 'capistrano-resque', '~> 0.2.1', require: false
+
   gem 'unicorn-rails'
 end
 
@@ -81,3 +84,4 @@ group :debug do
   gem 'capybara-screenshot'
   gem 'launchy'
 end
+

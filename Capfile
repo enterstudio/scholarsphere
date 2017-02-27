@@ -17,14 +17,11 @@ require 'capistrano/deploy'
 # require 'capistrano/rvm'
 require 'capistrano/rbenv' #rbenv setup
 require 'capistrano/rails' #rails (includes bundler, rails/assets and rails/migrations)
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 require 'whenever/capistrano' #whenever 
 require 'capistrano-resque'  #resque
-require 'capistrano/git' #git
-require './lib/capistrano/submodule_strategy' #custom submodule strategy
 require 'capistrano/rbenv_install' #rbenv install plugin
-
-# Makes Capistrano's output nicer to look at
-require 'airbrussh/capistrano'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 # tasks included: passenger, checksum
@@ -33,3 +30,4 @@ Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 # Enable tracing at all times
 Rake.application.options.trace = true
 Rake.application.options.backtrace = true
+
