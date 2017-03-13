@@ -158,4 +158,3 @@ namespace :rbenv_custom_ruby_cleanup do
   end
   after "deploy:finishing", "rbenv_custom_ruby_cleanup:purge_old_versions"
 end
-
