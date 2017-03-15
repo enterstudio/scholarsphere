@@ -55,10 +55,10 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/browse_everything_providers.yml',
   'config/arkivo.yml',
   'config/zotero.yml',
-  'public/sitemap.xml',
-  'public/robots.txt',
+  '/scholarsphere/shared_qa/public/sitemap.xml',
+  '/scholarsphere/shared_qa/public/robots.txt',
   'config/initializers/secret_token.rb',
-  'config/initializers/sufia-secret.rb',
+  '/scholarsphere/shared_qa/config/initializers/sufia-secret.rb',
   'config/initializers/arkivo_constraint.rb'
 )
 
