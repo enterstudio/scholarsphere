@@ -11,9 +11,22 @@ describe 'Visting the home page:', type: :feature do
 
   subject { page }
 
+  #runs in 24 seconds
   context 'and I do not belong to any groups' do
     let(:current_user) { create(:user) }
     it { is_expected.to have_content('Share. Manage. Preserve.') }
+    it { is_expected.to have_content('Recent') }
+    it { is_expected.to have_content('Featured') }
+  end
+
+  # Runs in 18 seconds
+  context 'and I do not belong to any groups' do
+    let(:current_user) { create(:user) }
+    it "has all the content" do
+      expect(page).to have_content('Share. Manage. Preserve.')
+      expect(page).to have_content('Recent')
+      expect(page).to have_content('Featured')
+    end
   end
 
   context 'and I belong to a couple of groups' do

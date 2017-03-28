@@ -32,6 +32,9 @@ FactoryGirl.define do
         after(:create) do |f|
           FeaturedWork.create!(work_id: f.id)
         end
+        after(:build) do |f|
+          FeaturedWork.create!(work_id: f.id)
+        end
       end
 
       factory :trophy_file do
