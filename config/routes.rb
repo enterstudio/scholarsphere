@@ -77,6 +77,10 @@ ScholarSphere::Application.routes.draw do
 
   get 'about' => 'static#about', id: 'about_page'
 
+  namespace :api do
+    get 'zotero/callback' => 'my_zotero#callback', as: :zotero_callback
+  end
+
   # This must be the very last route in the file because it has a catch-all route for 404 errors.
   # This behavior seems to show up only in production mode.
   mount Sufia::Engine => '/'
